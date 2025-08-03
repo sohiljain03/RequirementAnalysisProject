@@ -1,0 +1,15 @@
+<div class="requirements-container">
+  <h2>Requirements Analysis</h2>
+  <textarea [(ngModel)]="requirementsText" rows="6" cols="60" placeholder="Enter your requirements here..."></textarea>
+  <br />
+  <button (click)="analyze()">Analyze</button>
+
+  <div *ngIf="result">
+    <h3>User Stories</h3>
+    <ul>
+      <li *ngFor="let story of result.userStories">{{ story }}</li>
+    </ul>
+    <h3>LLD</h3>
+    <pre>{{ result.lld }}</pre>
+  </div>
+</div>
