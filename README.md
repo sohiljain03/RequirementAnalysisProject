@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Requirements Analysis & User Story Generator
 
 This project provides a tool for analyzing business requirements, generating user stories with acceptance criteria, and producing low-level design (LLD) artifacts.
@@ -30,3 +31,6 @@ This project provides a tool for analyzing business requirements, generating use
 ---
 
 For more details, see `.github/copilot-instructions.md`.
+=======
+# RequirementAnalysisProject
+>>>>>>> da215276f64c8efc38cf93d9d03e3ad9ef461d2f
