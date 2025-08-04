@@ -37,6 +37,18 @@ public class RequirementsController {
         return ResponseEntity.ok(requirementsService.generateLLD(request.getRequirementsText()));
     }
 
+    @PostMapping("/lld-doc")
+    public ResponseEntity<byte[]> generateLLDWordDoc(@RequestBody RequirementRequest request) {
+        byte[] docBytes = requirementsService.generateLLDWordDoc(request.getRequirementsText());
+        if (docBytes == null) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+        return ResponseEntity.ok()
+                .header("Content-Disposition", "attachment; filename=LLD.docx")
+                .header("Content-Type", "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+                .body(docBytes);
+    }
+
     @GetMapping("/health")
     public ResponseEntity<String> healthCheck() {
         return ResponseEntity.ok("OK");
